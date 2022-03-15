@@ -48,12 +48,10 @@ const Login = (props) => {
 
   useEffect(() => {
     const identifier = setTimeout(() => {
-      console.log("Checking for validity");
       setFormIsValid(emailIsValid && passwordIsValid);
     }, 500);
 
     return () => {
-      console.log("Cleanup");
       clearTimeout(identifier);
     };
   }, [emailIsValid, passwordIsValid]);
